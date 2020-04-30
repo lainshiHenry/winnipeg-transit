@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'utilities/constants.dart';
-import 'screens/splash_screen.dart';
-import 'screens/main_menu.dart';
-import 'screens/schedules_list.dart';
+import 'package:winnipegtransit/screens/by_bus_route.dart';
+import 'package:winnipegtransit/utilities/constants.dart';
+import 'package:winnipegtransit/screens/splash_screen.dart';
+import 'package:winnipegtransit/screens/main_menu.dart';
+import 'package:winnipegtransit/screens/by_stop_number.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashScreen.id: (context) => SplashScreen(),
         MainMenu.id: (context) => MainMenu(),
-        SchedulesList.id: (context) => SchedulesList(),
+        ByStopNumber.id: (context) => ByStopNumber(),
+        ByBusRoute.id: (context) => ByBusRoute(),
       },
       theme: ThemeData(
         primaryColor: kPrimaryColour,

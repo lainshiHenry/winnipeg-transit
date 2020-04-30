@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:winnipegtransit/screens/schedules_list.dart';
+import 'package:winnipegtransit/screens/by_bus_route.dart';
+import 'package:winnipegtransit/screens/by_stop_number.dart';
 import 'package:winnipegtransit/utilities/constants.dart';
 
 class MainMenu extends StatefulWidget {
@@ -27,13 +28,16 @@ class _MainMenuState extends State<MainMenu> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               MenuOptionButton(
-                buttonText: 'Bus Schedule',
+                buttonText: 'Bus Stop #',
                 onPressed: () {
-                  Navigator.pushNamed(context, SchedulesList.id);
+                  Navigator.pushNamed(context, ByStopNumber.id);
                 },
               ),
               MenuOptionButton(
-                buttonText: 'Option 2',
+                buttonText: 'Bus Route #',
+                onPressed: () {
+                  Navigator.pushNamed(context, ByBusRoute.id);
+                },
               ),
             ],
           ),
@@ -45,17 +49,6 @@ class _MainMenuState extends State<MainMenu> {
               ),
               MenuOptionButton(
                 buttonText: 'Option 4',
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              MenuOptionButton(
-                buttonText: 'Option 5',
-              ),
-              MenuOptionButton(
-                buttonText: 'Option 6',
               ),
             ],
           ),
@@ -78,8 +71,13 @@ class MenuOptionButton extends StatelessWidget {
       textColor: kSecondaryWhiteTextColour,
       padding: EdgeInsets.symmetric(vertical: 15.0),
       onPressed: onPressed,
-      child: Text(
-        buttonText,
+      child: Column(
+        children: <Widget>[
+          Text('Search by'),
+          Text(
+            buttonText,
+          ),
+        ],
       ),
     );
   }
